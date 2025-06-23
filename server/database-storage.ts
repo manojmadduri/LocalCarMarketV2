@@ -6,6 +6,7 @@ import {
   contactMessages,
   adminCredentials,
   carPriceHistory,
+  carAnalytics,
   type Car,
   type InsertCar,
   type Service,
@@ -499,6 +500,43 @@ export class DatabaseStorage implements IStorage {
     } catch (error) {
       console.error('Price history query error:', error);
       return [];
+    }
+  }
+
+  // Analytics functionality
+  async getCarAnalytics(carId: number): Promise<any> {
+    try {
+      const [analytics] = await db.select().from(carAnalytics).where(eq(carAnalytics.carId, carId));
+      return analytics || {
+        id: carId,
+        carId: carId,
+        totalViews: 0,
+        viewsToday: 0,
+        contactClicks: 0,
+        phoneClicks: 0,
+        shareCount: 0,
+        averageTimeSpent: 0,
+        popularityScore: 0,
+        interestLevel: 'low',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      };
+    } catch (error) {
+      console.error('Analytics fetch error:', error);
+      return {
+        id: carId,
+        carId: carId,
+        totalViews: 0,
+        viewsToday: 0,
+        contactClicks: 0,
+        phoneClicks: 0,
+        shareCount: 0,
+        averageTimeSpent: 0,
+        popularityScore: 0,
+        interestLevel: 'low',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      };
     }
   }
 }
