@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Integrity Auto and Body - Quality Used Cars & Auto Services</title>
+    <meta name="description" content="Find quality used cars and professional auto repair services at The Integrity Auto and Body. Browse our inventory of inspected vehicles and schedule service appointments.">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #007AFF 0%, #5856D6 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+            max-width: 600px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+        .status {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #007AFF;
+        }
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid #007AFF;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .api-test {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e8f4f8;
+            border-radius: 6px;
+        }
+        .success { color: #28a745; }
+        .warning { color: #ffc107; }
+        .error { color: #dc3545; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>The Integrity Auto and Body</h1>
+        <p class="subtitle">Quality Used Cars & Professional Auto Services</p>
+        
+        <div class="status">
+            <div class="loading"></div>
+            <p>Connecting to vehicle inventory system...</p>
+        </div>
+
+        <div class="api-test" id="apiTest">
+            <p>Testing database connection...</p>
+        </div>
+    </div>
+
+    <script>
+        async function testAPI() {
+            const testDiv = document.getElementById('apiTest');
+            try {
+                const response = await fetch('/api/cars?limit=1');
+                const data = await response.json();
+                
+                if (data.cars && data.cars.length > 0) {
+                    testDiv.innerHTML = `
+                        <h3 class="success">✓ Database Connected Successfully</h3>
+                        <p>Found ${data.total} vehicles in inventory</p>
+                        <p>Sample: ${data.cars[0].year} ${data.cars[0].make} ${data.cars[0].model} - ${data.cars[0].price}</p>
+                        <p style="font-size: 12px; color: #666;">Cars are loading properly from Supabase database</p>
+                    `;
+                } else {
+                    testDiv.innerHTML = `
+                        <h3 class="warning">⚠ Connected - No Vehicles Found</h3>
+                        <p>Database connection successful but inventory is empty</p>
+                    `;
+                }
+            } catch (error) {
+                testDiv.innerHTML = `
+                    <h3 class="error">✗ Database Connection Failed</h3>
+                    <p>Error: ${error.message}</p>
+                    <p style="font-size: 12px;">Check DATABASE_URL in Vercel environment variables</p>
+                `;
+            }
+        }
+
+        testAPI();
+        setInterval(testAPI, 5000);
+    </script>
+</body>
+</html>
