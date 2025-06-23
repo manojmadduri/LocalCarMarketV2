@@ -57,7 +57,13 @@ app.use((req, res, next) => {
   if (app.get("env") === "development") {
     await setupVite(app, server);
   } else {
-    serveStatic(app);
+    // For production, try to serve static files, but fall back to Vite if build doesn't exist
+    try {
+      serveStatic(app);
+    } catch (error) {
+      console.log("⚠️ Build directory not found, falling back to Vite dev server for production");
+      await setupVite(app, server);
+    }
   }
 
   // ALWAYS serve the app on port 5000
