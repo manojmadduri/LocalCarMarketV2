@@ -1,0 +1,190 @@
+/* Apple-inspired component styling */
+
+/* Button styles */
+.btn-primary {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  border-radius: var(--radius);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: var(--shadow-smooth);
+}
+
+.btn-primary:hover {
+  background: hsl(var(--primary-hover));
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-elegant);
+}
+
+.btn-secondary {
+  background: hsl(var(--secondary));
+  color: hsl(var(--secondary-foreground));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.btn-secondary:hover {
+  background: hsl(var(--accent));
+  border-color: hsl(var(--primary) / 0.3);
+  transform: translateY(-1px);
+}
+
+/* Card styles */
+.card-modern {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card-modern:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: hsl(var(--primary) / 0.2);
+}
+
+/* Input styles */
+.input-modern {
+  background: hsl(var(--input));
+  border: 1px solid hsl(var(--border));
+  border-radius: calc(var(--radius) * 0.75);
+  color: hsl(var(--foreground));
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 0.75rem 1rem;
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: var(--shadow-input);
+}
+
+.input-modern:focus {
+  outline: none;
+  border-color: hsl(var(--primary));
+  box-shadow: var(--shadow-input-focus);
+}
+
+/* Badge styles */
+.badge-success {
+  background: hsl(var(--success-light));
+  color: hsl(var(--success-dark));
+  border: 1px solid hsl(var(--success-border));
+  border-radius: calc(var(--radius) * 0.5);
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+}
+
+.badge-warning {
+  background: hsl(var(--warning-light));
+  color: hsl(var(--warning-dark));
+  border: 1px solid hsl(var(--warning-border));
+  border-radius: calc(var(--radius) * 0.5);
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+}
+
+.badge-destructive {
+  background: hsl(var(--destructive-light));
+  color: hsl(var(--destructive-dark));
+  border: 1px solid hsl(var(--destructive-border));
+  border-radius: calc(var(--radius) * 0.5);
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+}
+
+/* Navigation styles */
+.nav-modern {
+  background: hsl(var(--background) / 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid hsl(var(--border));
+  box-shadow: var(--shadow-nav);
+}
+
+/* Form styles */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  color: hsl(var(--foreground));
+  font-weight: 500;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.005em;
+}
+
+.form-error {
+  color: hsl(var(--destructive));
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+/* Contact page specific styles */
+.contact-hero {
+  background: linear-gradient(135deg, hsl(var(--primary) / 0.05) 0%, hsl(var(--primary) / 0.02) 100%);
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+.contact-card {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  padding: 2rem;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.contact-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: hsl(var(--primary) / 0.2);
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: calc(var(--radius) * 0.75);
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.contact-info-item:hover {
+  background: hsl(var(--accent));
+  transform: translateX(4px);
+}
+
+.contact-form-container {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-elegant);
+  padding: 2.5rem;
+}
+
+/* Status indicators */
+.status-available {
+  background: hsl(var(--success-light));
+  color: hsl(var(--success-dark));
+  border: 1px solid hsl(var(--success-border));
+}
+
+.status-sold {
+  background: hsl(var(--destructive-light));
+  color: hsl(var(--destructive-dark));
+  border: 1px solid hsl(var(--destructive-border));
+}
+
+.status-pending {
+  background: hsl(var(--warning-light));
+  color: hsl(var(--warning-dark));
+  border: 1px solid hsl(var(--warning-border));
+}

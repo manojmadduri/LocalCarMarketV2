@@ -1,0 +1,87 @@
+/* 
+ * CENTRALIZED COLOR SYSTEM - The Integrity Auto and Body
+ * Change these CSS variables to update the entire website's color scheme
+ */
+
+:root {
+  /* === APPLE-INSPIRED COLOR SYSTEM === */
+  /* Clean System Blue - Modern and trustworthy */
+  --primary: hsl(211, 100%, 50%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --primary-hover: hsl(211, 100%, 45%);
+  --primary-light: hsl(211, 100%, 97%);
+  
+  /* === MINIMAL NEUTRAL PALETTE === */
+  /* Ultra-clean whites and grays */
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(210, 6%, 21%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(210, 6%, 21%);
+  --muted: hsl(210, 17%, 98%);
+  --muted-foreground: hsl(210, 6%, 46%);
+  
+  /* Secondary elements - Apple's refined grays */
+  --secondary: hsl(210, 17%, 97%);
+  --secondary-foreground: hsl(210, 6%, 21%);
+  --accent: hsl(210, 17%, 95%);
+  --accent-foreground: hsl(210, 6%, 21%);
+  
+  /* === CRISP APPLE-STYLE ELEMENTS === */
+  /* Minimal borders and clean inputs */
+  --border: hsl(210, 17%, 90%);
+  --input: hsl(210, 17%, 95%);
+  --ring: hsl(211, 100%, 50%);
+  
+  /* Apple-style popover and dropdown elements */
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(210, 6%, 21%);
+  
+  /* === APPLE-STYLE STATUS COLORS === */
+  /* Clean system green */
+  --success: hsl(142, 71%, 45%);
+  --success-foreground: hsl(0, 0%, 100%);
+  --success-light: hsl(142, 71%, 96%);
+  --success-dark: hsl(142, 71%, 35%);
+  --success-border: hsl(142, 71%, 85%);
+  
+  /* Refined system orange */
+  --warning: hsl(37, 91%, 55%);
+  --warning-foreground: hsl(0, 0%, 100%);
+  --warning-light: hsl(37, 91%, 96%);
+  --warning-dark: hsl(37, 91%, 45%);
+  --warning-border: hsl(37, 91%, 85%);
+  
+  /* Subtle system red */
+  --destructive: hsl(0, 70%, 52%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --destructive-light: hsl(0, 70%, 96%);
+  --destructive-dark: hsl(0, 70%, 42%);
+  --destructive-border: hsl(0, 70%, 85%);
+  
+  /* === APPLE DESIGN SYSTEM === */
+  --radius: 1rem;
+  
+  /* === MODERN TYPOGRAPHY SYSTEM === */
+  /* Primary font for headings - Space Grotesk (geometric, modern) */
+  --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  /* Body font - Inter (highly readable, professional) */
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  /* Font weights */
+  --font-light: 300;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+  --font-black: 900;
+  
+  /* Letter spacing */
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+}

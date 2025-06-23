@@ -1,0 +1,101 @@
+/* 
+ * MODULAR CSS ARCHITECTURE - The Integrity Auto and Body
+ * Organized into separate files for better maintainability
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+/* Import modular stylesheets */
+@import './styles/variables.css';
+@import './styles/typography.css';
+@import './styles/animations.css';
+@import './styles/shadows.css';
+@import './styles/components.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === PREMIUM DARK MODE === */
+.dark {
+  --background: hsl(218, 32%, 6%);
+  --foreground: hsl(218, 15%, 98%);
+  --card: hsl(218, 32%, 9%);
+  --card-foreground: hsl(218, 15%, 98%);
+  --muted: hsl(218, 27%, 12%);
+  --muted-foreground: hsl(218, 10%, 65%);
+  --secondary: hsl(218, 27%, 14%);
+  --secondary-foreground: hsl(218, 15%, 98%);
+  --accent: hsl(218, 27%, 16%);
+  --accent-foreground: hsl(218, 15%, 98%);
+  --border: hsl(218, 27%, 18%);
+  --input: hsl(218, 27%, 16%);
+  --popover: hsl(218, 32%, 9%);
+  --popover-foreground: hsl(218, 15%, 98%);
+  --primary: hsl(218, 20%, 95%);
+  --primary-hover: hsl(218, 15%, 88%);
+  --ring: hsl(218, 20%, 95%);
+  --warning-foreground: hsl(218, 32%, 6%);
+}
+
+/* === LEGACY COLOR OVERRIDE === */
+* {
+  /* Override legacy color variables to maintain consistency */
+  --violet: var(--primary) !important;
+  --purple: var(--primary) !important;
+  --violet-500: var(--primary) !important;
+  --purple-500: var(--primary) !important;
+  --violet-600: var(--primary-hover) !important;
+  --purple-600: var(--primary-hover) !important;
+}
+
+/* === GLOBAL UTILITIES === */
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+/* Ensure proper text visibility throughout the site */
+.text-high-contrast {
+  color: hsl(var(--foreground)) !important;
+  font-weight: 500;
+}
+
+.bg-clean {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+/* Apple-style blur effects */
+.backdrop-blur-apple {
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+}
+
+/* Status indicator styles */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: calc(var(--radius) * 0.5);
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: 1px solid;
+  text-transform: capitalize;
+}
+
+/* Enhanced mobile visibility */
+@media (max-width: 768px) {
+  .mobile-enhanced-text {
+    font-weight: 600 !important;
+    color: hsl(var(--foreground)) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mobile-button-enhanced {
+    padding: 1rem 1.5rem !important;
+    font-size: 1.125rem !important;
+    font-weight: 600 !important;
+    border: 2px solid hsl(var(--primary)) !important;
+  }
+}
